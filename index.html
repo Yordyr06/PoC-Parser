@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>PoC-Parser</title>
+</head>
+<body>
+    <!-- Tittle -->
+    <h2 class="title">Parseador</h2>
+    
+    <div class="parser-container">
+        
+        <!-- Textboxes -->
+        <div class="text-boxes">
+            <textarea name="parser-area" id="parser-area" cols="50" rows="10"></textarea>
+            <label id="result" for="">Resultado</label>
+        </div>
+
+        <!-- Parser list options -->
+        <fieldset id="parser-options" name="parser-option">
+            <legend>Prueba el parseador</legend>
+            
+            <div id="sin-parsear">
+                <input type="radio" name="parser-option">
+                <label for="sin-parsear">Sin Parsear</label>
+            </div>
+            
+            <div id="no-parentesis">
+                <input type="radio" name="parser-option">
+                <label for="no-parentesis">No Parentesis</label>
+            </div>
+
+            <div id="solo-parantesis">
+                <input type="radio" name="parser-option">
+                <label for="solo-parentesis">Solo Parentesis</label>
+            </div>
+            
+            <div id="ignorar-parentesis">
+                <input type="radio" name="parser-option">
+                <label for="ignorar-parentesis">Ignorar Parentesis</label>
+            </div>
+        </fieldset>
+        
+        <div>
+            <input id="buttom" type="submit" value="Ok!">
+        </div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "poc-parser",
+  "version": "1.0.0",
+  "description": "Crear una aplicacion web que funcione en el frontend y que haga lo siguiente:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yordyr06/PoC-Parser.git"
+  },
+  "keywords": [
+    "javascript"
+  ],
+  "author": "Yordy Almonte <yoalmonte.dev@outlook.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Yordyr06/PoC-Parser/issues"
+  },
+  "homepage": "https://github.com/Yordyr06/PoC-Parser#readme"
+}

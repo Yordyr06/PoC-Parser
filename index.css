@@ -1,0 +1,19 @@
+:root{
+    /* Variables */
+    --sky-blue: #5fdfe1;
+    --dark-blue: #162032;
+    --nice-blue: #2471a3;
+    --very-light-blue: #d4e6f1;
+    --text-input-field: #F7F7F7;
+    --white: #FFFFFF;
+    --black: #000000;
+    --dark: #232830;
+    --sm: 14px;
+    --md: 16px;
+    --lg: 18px;
+}
+
+body{
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+}
