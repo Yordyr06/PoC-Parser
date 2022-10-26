@@ -1,10 +1,10 @@
-:root{
+:root {
     /* Variables */
-    --sky-blue: #5fdfe1;
     --dark-blue: #162032;
     --nice-blue: #2471a3;
-    --very-light-blue: #d4e6f1;
+    --gainsboro: #DCDCDC;
     --text-input-field: #F7F7F7;
+    --warning: #B33A3A;
     --white: #FFFFFF;
     --black: #000000;
     --dark: #232830;
@@ -13,7 +13,88 @@
     --lg: 18px;
 }
 
-body{
+body {
     margin: 0;
     font-family: 'Quicksand', sans-serif;
+}
+
+#title {
+    text-align: center;    
+}
+
+.parser-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-boxes {
+    display: flex;
+    flex-direction: column;
+}
+
+#parser-area {
+    border: 1px solid var(--nice-blue);
+    border-radius: 4px;
+    margin-top: 28px;
+    margin-bottom: 12px;
+}
+
+#result {
+    color: var(--gainsboro);
+    text-align: center;
+    margin-top: 12px;
+    margin-bottom: 28px;
+}
+
+#parser-options {
+    border: 1px solid var(--nice-blue);
+    border-radius: 4px;
+    margin-bottom: 12px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+#primary-button{
+    background-color: var(--nice-blue);
+    border: none;
+    border-radius: 8px;
+    color: var(--white);
+    width: 300px;
+    cursor: pointer;
+    font-size: var(--sm);
+    font-weight: bold;
+    height: 50px;
+    margin-top: 28px;
+    margin-bottom: 12px;
+}
+
+#secondary-button{
+    background-color: var(--white);
+    border: 1px solid var(--nice-blue);
+    border-radius: 8px;
+    color: var(--nice-blue);
+    width: 300px;
+    cursor: pointer;
+    font-size: var(--sm);
+    font-weight: bold;
+    height: 50px;
+    margin-top: 12px;
+    margin-bottom: 28px;
+}
+
+#tertiary-button {
+    background-color: var(--white);
+    border: 1px solid var(--nice-blue);
+    border-radius: 8px;
+    color: var(--nice-blue);
+    width: 20%;
+    cursor: pointer;
+    font-size: var(--sm);
+    height: 25px;
+    margin-bottom: 28px;
 }

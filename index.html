@@ -12,45 +12,51 @@
 </head>
 <body>
     <!-- Tittle -->
-    <h2 class="title">Parseador</h2>
+    <h2 id="title">Parseador</h2>
     
     <div class="parser-container">
-        
+
         <!-- Textboxes -->
         <div class="text-boxes">
-            <textarea name="parser-area" id="parser-area" cols="50" rows="10"></textarea>
-            <label id="result" for="">Resultado</label>
+            <textarea id="parser-area" name="parser-area" onkeyup="mirror(this.value)" cols="50" rows="10"></textarea>
+            <input id="tertiary-button" type="submit" value="Limpiar" onclick="clean()">
+            <label id="result" for="result">Resultado</label>
         </div>
 
         <!-- Parser list options -->
-        <fieldset id="parser-options" name="parser-option">
+        <fieldset id="parser-options" name="parser-options">
             <legend>Prueba el parseador</legend>
             
-            <div id="sin-parsear">
-                <input type="radio" name="parser-option">
+            <div>
+                <input id="sin-parsear" type="radio" name="option">
                 <label for="sin-parsear">Sin Parsear</label>
             </div>
             
-            <div id="no-parentesis">
-                <input type="radio" name="parser-option">
+            <div>
+                <input id="no-parentesis" type="radio" name="option">
                 <label for="no-parentesis">No Parentesis</label>
             </div>
 
-            <div id="solo-parantesis">
-                <input type="radio" name="parser-option">
+            <div>
+                <input id="solo-parantesis" type="radio" name="option">
                 <label for="solo-parentesis">Solo Parentesis</label>
             </div>
             
-            <div id="ignorar-parentesis">
-                <input type="radio" name="parser-option">
+            <div>
+                <input id="ignorar-parentesis" type="radio" name="option">
                 <label for="ignorar-parentesis">Ignorar Parentesis</label>
             </div>
+
+
         </fieldset>
         
         <div>
-            <input id="buttom" type="submit" value="Ok!">
+            <input class="buttons" id="primary-button" type="submit" value="Parsear" onclick="parser()">
+            <input class="buttons" id="secondary-button" type="submit" value="Deshacer" onclick="undo()">
         </div>
-
+        
     </div>
 </body>
 </html>
+
+<script src="./index.js"></script>
