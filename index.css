@@ -4,7 +4,7 @@
     --nice-blue: #2471a3;
     --gainsboro: #DCDCDC;
     --text-input-field: #F7F7F7;
-    --warning: #B33A3A;
+    --warning-red: #B33A3A;
     --white: #FFFFFF;
     --black: #000000;
     --dark: #232830;
@@ -16,6 +16,10 @@
 body {
     margin: 0;
     font-family: 'Quicksand', sans-serif;
+}
+
+.inactive {
+    display: none;
 }
 
 #title {
@@ -51,7 +55,25 @@ body {
 #parser-options {
     border: 1px solid var(--nice-blue);
     border-radius: 4px;
-    margin-bottom: 12px;
+    margin-bottom: 4px;
+}
+
+#warning-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#warning-container img {
+    width: 15%;
+}
+
+#warning {
+    color: var(--warning-red);
+    font-size: var(--sm);
+    font-weight: bold;
+    margin-top: none;
 }
 
 .buttons {

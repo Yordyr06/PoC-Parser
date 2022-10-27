@@ -1,34 +1,22 @@
 // Selectores
-const parserArea = document.getElementById("parser-area");
-const result = document.getElementById("result");
+const parserArea = document.getElementById('parser-area');
+const result = document.getElementById('result');
+const fieldset = document.getElementById('parser-options');
+const warning = document.getElementById('warning-container');
 
-const primaryButton = document.getElementById("primary-button");
-const secondaryButton = document.getElementById("secondary-button");
-
-const options = document.getElementsByName("option");
-
+const options = document.getElementsByName('option');
+let value = [];
 
 
 // Gadget para el resultado
-mirror = (value) => {
-    document.getElementById("result").innerHTML = value;
-}
-
-
-
-// Funcion de boton limpiar
-clean = async () => {
-    return new Promise ((resolve) => {
-        if (typeof parserArea.value == 'string') {
-            resolve(parserArea.value = '')
-        }
-    })    
+mirrorFn = (value) => {
+    document.getElementById('result').innerHTML = value;
 }
 
 
 
 // Funcion de boton parsear
-parser = async () => {
+parserBtn = async () => {
 
     function sinParsear () {}
     function noParentesis () {}
@@ -36,13 +24,13 @@ parser = async () => {
     function ignorarParentesis () {}
 
     return new Promise ((resolve, reject) => {
-        if (document.getElementById("sin-parsear").checked) {
+        if (document.getElementById('sin-parsear').checked) {
             resolve();
-        } else if (document.getElementById("no-parentesis").checked) {
+        } else if (document.getElementById('no-parentesis').checked) {
             resolve();
-        } else if (document.getElementById("solo-parentesis").checked) {
+        } else if (document.getElementById('solo-parentesis').checked) {
             resolve();
-        } else if (document.getElementById("ignorar-parentesis").checked) {
+        } else if (document.getElementById('ignorar-parentesis').checked) {
             resolve();
         } else {
             reject();
@@ -52,15 +40,36 @@ parser = async () => {
 
 
 
-// Funcion de boton deshacer
-undo = async () => { 
-    return new Promise ((resolve) => {
-        for (option of options) {
-            if (option.checked == true) {
-                resolve (option.checked = false)
-            }
+// Funcion de boton limpiar
+cleanBtn = async () => {
+    return promise = new Promise ((resolve) => {
+        if (typeof parserArea.value == 'string') {
+            resolve(
+                parserArea.value = '',
+                document.getElementById('result').innerHTML = ''
+            );
         }
     })
+    .then(result);
 }
 
 
+// function anotherFn (frase) {
+//     let start = '';
+//     let finish = '';
+
+//     for (i of frase) {
+//         if (i == '(') {
+//             console.log(frase.indexOf(i));
+//             start = frase.indexOf(i);
+//         } else if (i == ')') {
+//             console.log(frase.indexOf(i));
+//             finish = frase.indexOf(i);
+//         } else {
+//             console.log(frase[start,finish]);
+//         }
+//     }
+//     // console.log(frase.search('(',')'));
+// }
+
+// anotherFn('papadio (ni cuanta prueba)');
