@@ -18,9 +18,9 @@
 
         <!-- Textboxes -->
         <div class="text-boxes">
-            <textarea id="parser-area" name="parser-area" onkeyup="mirrorFn(this.value)" cols="50" rows="10"></textarea>
+            <textarea id="parser-area" name="parser-area" cols="50" rows="10"></textarea>
             <input id="tertiary-button" type="submit" value="Limpiar" onclick="cleanBtn()">
-            <label id="result" for="result">Resultado</label>
+            <label id="result" for="result"></label>
         </div>
 
         <!-- Parser list options -->
@@ -38,7 +38,7 @@
             </div>
 
             <div>
-                <input id="solo-parantesis" type="radio" name="option">
+                <input id="solo-parentesis" type="radio" name="option">
                 <label for="solo-parentesis">Solo Parentesis</label>
             </div>
             
@@ -48,7 +48,12 @@
             </div>
         </fieldset>
 
-
+        <!-- Mensajes de alerta -->
+        <div id="warning-container" >
+            <label for="" id="no-options" class="warning inactive">No seleccionaste ninguna opcion</label>
+            <label for="" id="sin-parsear-error" class="warning inactive">No se hallo ningun texto</label>
+            <label for="" id="no-parentesis-error" class="warning inactive">No se hallaron parentesis</label>
+        </div>
 
         <!-- Botones -->
         <div>

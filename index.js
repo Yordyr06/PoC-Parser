@@ -5,71 +5,88 @@ const fieldset = document.getElementById('parser-options');
 const warning = document.getElementById('warning-container');
 
 const options = document.getElementsByName('option');
-let value = [];
+
+const noOptions = document.getElementById("no-options");
+const sinParsear = document.getElementById("sin-parsear-error");
+const noParentesis = document.getElementById("no-parentesis-error");
 
 
-// Gadget para el resultado
-mirrorFn = (value) => {
-    document.getElementById('result').innerHTML = value;
+
+function sinParsearFn() {
+    result.innerHTML = parserArea.value;
+    result.style.color='#000000';
+    noOptions.classList.add('inactive');
+};
+
+
+
+function noParentesisFn() {
+    str = parserArea.value.replace('(', ' ');
+    str = str.replace(')', ' ');
+    result.innerHTML = str;
+    result.style.color='#000000';
+    noOptions.classList.add('inactive');
+};
+
+
+
+function soloParentesisFn() {
+    a = parserArea.value.indexOf('(');
+    b = parserArea.value.indexOf(')');
+    str = parserArea.value.substring(a, b + 1);
+    result.innerHTML = str;
+    result.style.color='#000000';
+    noOptions.classList.add('inactive');
+}
+
+
+
+function ignorarParentesisFn() {
+    a = parserArea.value.indexOf('(');
+    b = parserArea.value.indexOf(')');
+    str1 = parserArea.value.slice(0, a);
+    str2 = parserArea.value.slice(b + 1);
+    result.innerHTML = str1 + str2;
+    result.style.color='#000000';
+    noOptions.classList.add('inactive');
 }
 
 
 
 // Funcion de boton parsear
 parserBtn = async () => {
+    if (document.getElementById('sin-parsear').checked) {
+        return await sinParsearFn();
 
-    function sinParsear () {}
-    function noParentesis () {}
-    function soloParentesis () {}
-    function ignorarParentesis () {}
+    } else if (document.getElementById('no-parentesis').checked) {
+        return await noParentesisFn();
+        
+    } else if (document.getElementById('solo-parentesis').checked) {
+        return await soloParentesisFn();
 
-    return new Promise ((resolve, reject) => {
-        if (document.getElementById('sin-parsear').checked) {
-            resolve();
-        } else if (document.getElementById('no-parentesis').checked) {
-            resolve();
-        } else if (document.getElementById('solo-parentesis').checked) {
-            resolve();
-        } else if (document.getElementById('ignorar-parentesis').checked) {
-            resolve();
-        } else {
-            reject();
-        }
-    })
+    } else if (document.getElementById('ignorar-parentesis').checked) {
+        return await ignorarParentesisFn();    
+        
+
+    } else {
+        noOptions.classList.remove('inactive');
+    }
 }
 
 
 
 // Funcion de boton limpiar
 cleanBtn = async () => {
-    return promise = new Promise ((resolve) => {
+    return promise = await new Promise ((resolve) => {
         if (typeof parserArea.value == 'string') {
             resolve(
                 parserArea.value = '',
-                document.getElementById('result').innerHTML = ''
+                document.getElementById('result').innerHTML = '',
+                result.style.color='#DCDCDC',
+                sinParsear.classList.add('inactive'),
+                noParentesis.classList.add('inactive')
             );
         }
     })
     .then(result);
 }
-
-
-// function anotherFn (frase) {
-//     let start = '';
-//     let finish = '';
-
-//     for (i of frase) {
-//         if (i == '(') {
-//             console.log(frase.indexOf(i));
-//             start = frase.indexOf(i);
-//         } else if (i == ')') {
-//             console.log(frase.indexOf(i));
-//             finish = frase.indexOf(i);
-//         } else {
-//             console.log(frase[start,finish]);
-//         }
-//     }
-//     // console.log(frase.search('(',')'));
-// }
-
-// anotherFn('papadio (ni cuanta prueba)');

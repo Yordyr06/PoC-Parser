@@ -69,7 +69,7 @@ body {
     width: 15%;
 }
 
-#warning {
+.warning {
     color: var(--warning-red);
     font-size: var(--sm);
     font-weight: bold;
