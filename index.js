@@ -13,42 +13,58 @@ const noParentesis = document.getElementById("no-parentesis-error");
 
 
 function sinParsearFn() {
-    result.innerHTML = parserArea.value;
-    result.style.color='#000000';
-    noOptions.classList.add('inactive');
+    if (parserArea.value.length > '') {
+        result.innerHTML = parserArea.value;
+        result.style.color='#000000';
+        noOptions.classList.add('inactive');
+    } else {
+
+    };
 };
 
 
 
 function noParentesisFn() {
-    str = parserArea.value.replace('(', ' ');
-    str = str.replace(')', ' ');
-    result.innerHTML = str;
-    result.style.color='#000000';
-    noOptions.classList.add('inactive');
+    if (parserArea.value.length > '') {
+        str = parserArea.value.replace('(', ' ');
+        str = str.replace(')', ' ');
+        result.innerHTML = str;
+        result.style.color='#000000';
+        noOptions.classList.add('inactive');
+    } else {
+
+    };
 };
 
 
 
 function soloParentesisFn() {
-    a = parserArea.value.indexOf('(');
-    b = parserArea.value.indexOf(')');
-    str = parserArea.value.substring(a, b + 1);
-    result.innerHTML = str;
-    result.style.color='#000000';
-    noOptions.classList.add('inactive');
+    if (parserArea.value.length > '') {
+        a = parserArea.value.indexOf('(');
+        b = parserArea.value.indexOf(')');
+        str = parserArea.value.substring(a, b + 1);
+        result.innerHTML = str;
+        result.style.color='#000000';
+        noOptions.classList.add('inactive');
+    } else {
+
+    };
 }
 
 
 
 function ignorarParentesisFn() {
-    a = parserArea.value.indexOf('(');
-    b = parserArea.value.indexOf(')');
-    str1 = parserArea.value.slice(0, a);
-    str2 = parserArea.value.slice(b + 1);
-    result.innerHTML = str1 + str2;
-    result.style.color='#000000';
-    noOptions.classList.add('inactive');
+    if (parserArea.value.length > '') {
+        a = parserArea.value.indexOf('(');
+        b = parserArea.value.indexOf(')');
+        str1 = parserArea.value.slice(0, a);
+        str2 = parserArea.value.slice(b + 1);
+        result.innerHTML = str1 + str2;
+        result.style.color='#000000';
+        noOptions.classList.add('inactive');
+    } else {
+
+    };
 }
 
 
@@ -67,7 +83,6 @@ parserBtn = async () => {
     } else if (document.getElementById('ignorar-parentesis').checked) {
         return await ignorarParentesisFn();    
         
-
     } else {
         noOptions.classList.remove('inactive');
     }
