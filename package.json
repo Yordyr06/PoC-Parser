@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/Yordyr06/PoC-Parser/issues"
   },
-  "homepage": "https://github.com/Yordyr06/PoC-Parser#readme"
+  "homepage": "https://github.com/Yordyr06/PoC-Parser#readme",
+  "dependencies": {
+    "xmlhttprequest": "^1.8.0"
+  }
 }
